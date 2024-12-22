@@ -38,19 +38,16 @@ export function Author() {
               Author
             </SectionHeading>
             <p className="mt-8 font-display text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
-              <span className="block text-blue-600">Kevin Wu –</span> Hey
-              there, I’m the author behind ‘Travel to China Like a Local’.
+              <span className="block text-blue-600">Kevin Wu &ndash;</span> Hey there, I&rsquo;m the author behind &lsquo;Travel to China Like a Local&rsquo;.
             </p>
             <p className="mt-4 text-lg tracking-tight text-slate-700">
             I am a software developer who has been living and working in Beijing for over nine years. I have a passion for programming and road trips. In my spare time, I enjoy backpacking and have traveled extensively across most provinces and tourist spots in China. I also have a deep love for photography and driving.
             </p>
             <p className="mt-4 text-lg tracking-tight text-slate-700">
-
             As more international friends visit China, I've noticed that many share experiences that often differ significantly from their initial impressions. They also encounter various challenges during their travels. This inspired me to write this e-book, which aims to guide travelers on how to navigate China smoothly.
             </p>
             <p className="mt-4 text-lg tracking-tight text-slate-700">
-
-            In this guide, you'll learn how to purchase subway tickets, use "Meituan," which is similar to DoorDash for food delivery, and request rides with Didi, just like you would with Uber. I hope this e-book will be a helpful resource for you.
+            In this guide, you'll learn how to purchase subway tickets, use &quot;Meituan,&quot; which is similar to DoorDash for food delivery, and request rides with Didi, just like you would with Uber. I hope this e-book will be a helpful resource for you.
             If you have any questions or feedback, please don't hesitate to reach out to me
             </p>
             <p className="mt-8">

@@ -19,14 +19,14 @@ function Testimonial() {
       </div>
       <blockquote className="mt-2">
         <p className="font-display text-xl font-medium text-slate-900">
-          {t("This ebook helps me plan my trip to China. I wish I had known this earlier.")}
+          {t("This ebook has been a great help for my upcoming trip to China. I've only read two chapters, but the tips have already clarified my plans. I wish I had found it sooner!")}
         </p>
       </blockquote>
       <figcaption className="mt-2 text-sm text-slate-500">
         <strong className="font-semibold text-blue-600 before:content-['—_']">
-          Staffan Solomon
+          Staffan
         </strong>
-        , {t("traveler from USA")}
+        , {t("Travel to China for business from the USA.")}
       </figcaption>
     </figure>
   )

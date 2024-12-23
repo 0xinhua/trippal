@@ -6,7 +6,7 @@ export function LanguageSwitcher() {
 
   const router = useRouter()
   const locales = [
-    { href:'/', name:'English' },
+    { href:'/en', name:'English' },
     { href:'/ja', name:'日本語' },
     { href:'/ko', name:'한국어'}
   

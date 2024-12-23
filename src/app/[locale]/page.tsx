@@ -12,7 +12,7 @@ import { Testimonial } from '@/components/Testimonial'
 import { Testimonials } from '@/components/Testimonials'
 import avatarImage1 from '@/images/avatars/avatar-1.png'
 import avatarImage2 from '@/images/avatars/avatar-2.png'
-import TranslationsProvider from './../TranslationsProvider'
+import TranslationsProvider from '../TranslationsProvider'
 import initTranslations from '../i18n'
 
 const i18nNamespaces = ['landing']

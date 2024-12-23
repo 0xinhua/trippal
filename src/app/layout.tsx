@@ -11,9 +11,16 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Everything you need before traveling to China.',
+  title: 'Complete Travel Guide for First-Time Visitors to China.',
   description:
-    'A e-book that guides you how to plan your trip to China.',
+    'A China Travel Guide book that guides you how to plan your first trip to China.',
+  keywords: [
+    'China Travel Tips',
+    'China Travel Guide',
+    'China Travel Guide book',
+    'Travel Guide to China pdf',
+    'Tips for Traveling to China for business',
+  ],
 }
 
 export default function RootLayout({

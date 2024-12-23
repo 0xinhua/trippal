@@ -14,6 +14,7 @@ function Plan({
   name,
   description,
   price,
+  discountPrice,
   features,
   href,
   featured = false,
@@ -21,6 +22,7 @@ function Plan({
   name: string
   description: string
   price: string
+  discountPrice: string
   features: Array<string>
   href: string
   featured?: boolean
@@ -63,8 +65,11 @@ function Plan({
             )}
           >
             <s>{price}</s>
+            {discountPrice && ( // Conditionally render discount price
+          <span className='ml-2 text-4xl tracking-tight text-blue-600'>{discountPrice}</span>
+        )}
           </span>
-          <span className='text-base text-slate-600'>{t("First 20 copies free!")}</span>
+          <span className='text-base text-slate-600'>{t("Early bird discount price.")}</span>
         </p>
         <div className="order-last mt-8">
           <ul
@@ -128,6 +133,7 @@ export function Pricing() {
             name={t("One-time")}
             description={t("Pay once and future updates included.")}
             price="$19.9"
+            discountPrice="$9.9"
             href={surveyUrl}
             features={[
               t("10+ chapters ebook"),

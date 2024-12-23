@@ -1,9 +1,14 @@
+"use client"
+
 import Link from 'next/link'
 
 import { CheckIcon } from '@/components/CheckIcon'
 import { Container } from '@/components/Container'
+import { useTranslation } from 'react-i18next'
 
 export function Introduction() {
+  const { t } = useTranslation()
+
   return (
     <section
       id="introduction"
@@ -12,19 +17,19 @@ export function Introduction() {
     >
       <Container className="text-lg tracking-tight text-slate-700">
         <p className="font-display text-4xl font-bold tracking-tight text-slate-900">
-        “Travel to China Like a Local” is an e-book that serves as a comprehensive guide for planning your trip to China, including everything you need to prepare, such as policies, entry requirements, downloading and using essential apps, and how to book tickets.
+          {t("Introduction title")}
         </p>
         <p className="mt-4">
-        This guide also introduces popular tourist attractions in major cities like Beijing, Shanghai, Hong Kong, Chengdu, and more. This section will be updated regularly to reflect any changes in attractions or new recommendations based on the latest travel trends and experiences.
+          {t("Introduction description")}
         </p>
         <ul role="list" className="mt-8 space-y-3">
           {[
-            'Understanding visa requirements and application processes',
-            'How to navigate public transportation in major cities',
-            'Tips for booking accommodations and finding the best deals',
-            'Cultural etiquette and local customs to be aware of',
-            'Essential apps for travel planning and communication',
-            'Popular dishes to try and food safety tips',
+            t("Introduction section visa"),
+            t("Introduction section transportation"),
+            t("Introduction section booking"),
+            t("Introduction section cultural"),
+            t("Introduction section apps"),
+            t("Introduction section food"),
           ].map((feature) => (
             <li key={feature} className="flex">
               <CheckIcon className="h-8 w-8 flex-none fill-blue-500" />
@@ -33,14 +38,14 @@ export function Introduction() {
           ))}
         </ul>
         <p className="mt-8">
-          By the end of the book, you’ll have all the confidence you need to plan your trip to China.
+          {t("Introduction end section")}
         </p>
         <p className="mt-10">
           <Link
             href="#free-chapters"
             className="text-base font-medium text-blue-600 hover:text-blue-800"
           >
-            Get two free chapters straight to your inbox{' '}
+            {t("Introduction link text")}
             <span aria-hidden="true">&rarr;</span>
           </Link>
         </p>

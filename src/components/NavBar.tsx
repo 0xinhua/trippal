@@ -3,22 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
 import clsx from 'clsx'
-
-const sections = [
-  {
-    id: 'table-of-contents',
-    title: (
-      <>
-        <span className="hidden lg:inline">Table of contents</span>
-        <span className="lg:hidden">Contents</span>
-      </>
-    ),
-  },
-  // { id: 'screencasts', title: 'Screencasts' },
-  // { id: 'resources', title: 'Resources' },
-  { id: 'pricing', title: 'Pricing' },
-  { id: 'author', title: 'Author' },
-]
+import { useTranslation } from 'next-i18next'
 
 function MenuIcon({
   open,
@@ -44,9 +29,26 @@ function MenuIcon({
 }
 
 export function NavBar() {
+  const { t } = useTranslation()
   let navBarRef = useRef<React.ElementRef<'div'>>(null)
   let [activeIndex, setActiveIndex] = useState<number | null>(null)
   let mobileActiveIndex = activeIndex === null ? 0 : activeIndex
+
+  const sections = [
+    {
+      id: 'table-of-contents',
+      title: (
+        <>
+          <span className="hidden lg:inline">{t('Table of contents')}</span>
+          <span className="lg:hidden">{t('Contents')}</span>
+        </>
+      ),
+    },
+    // { id: 'screencasts', title: 'Screencasts' },
+    // { id: 'resources', title: 'Resources' },
+    { id: 'pricing', title: t('Pricing') },
+    { id: 'author', title: t('Author') },
+  ]
 
   useEffect(() => {
     function updateActiveIndex() {

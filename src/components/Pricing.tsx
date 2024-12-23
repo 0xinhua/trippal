@@ -1,10 +1,12 @@
-import clsx from 'clsx'
+"use client"
 
+import clsx from 'clsx'
 import { Button } from '@/components/Button'
 import { CheckIcon } from '@/components/CheckIcon'
 import { Container } from '@/components/Container'
 import { GridPattern } from '@/components/GridPattern'
 import { SectionHeading } from '@/components/SectionHeading'
+import { useTranslation } from 'react-i18next'
 
 export const surveyUrl = 'https://rsgx3y2b6di4.sg.larksuite.com/share/base/form/shrlgOqrQ98tKevcDXNonmhxVff'
 
@@ -23,6 +25,7 @@ function Plan({
   href: string
   featured?: boolean
 }) {
+  const { t } = useTranslation()
   return (
     <div
       className={clsx(
@@ -61,7 +64,7 @@ function Plan({
           >
             <s>{price}</s>
           </span>
-          <span className='text-base text-slate-600'>First 20 copies free!</span>
+          <span className='text-base text-slate-600'>{t("First 20 copies free!")}</span>
         </p>
         <div className="order-last mt-8">
           <ul
@@ -92,7 +95,7 @@ function Plan({
           className="mt-8"
           aria-label={`Get started with the ${name} plan for $${price}`}
         >
-          Get this ebook
+          {t("Get this ebook")}
         </Button>
       </div>
     </div>
@@ -100,6 +103,7 @@ function Plan({
 }
 
 export function Pricing() {
+  const { t } = useTranslation()
   return (
     <section
       id="pricing"
@@ -117,17 +121,17 @@ export function Pricing() {
       <div className="mx-auto mt-16 max-w-5xl lg:px-6">
         <div className="flex justify-center items-center flex-col gap-8">
         <SectionHeading number="2" id="pricing-title">
-          Pricing
+          {t("Pricing")}
         </SectionHeading>
         <div className="grid bg-slate-50 sm:px-6 sm:pb-16 md:grid-cols-1 md:rounded-6xl md:px-8 md:pt-16 lg:p-20">
           <Plan
-            name="One-time"
-            description="Pay once and future updates included."
+            name={t("One-time")}
+            description={t("Pay once and future updates included.")}
             price="$19.9"
             href={surveyUrl}
             features={[
-              'The 10-chapters ebook',
-              'future updates access',
+              t("10+ chapters ebook"),
+              t('Future updates access'),
             ]}
           />
           {/* <Plan

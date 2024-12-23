@@ -1,3 +1,5 @@
+"use client"
+
 import Image from 'next/image'
 
 import { Button } from '@/components/Button'
@@ -5,7 +7,11 @@ import { GridPattern } from '@/components/GridPattern'
 import { StarRating } from '@/components/StarRating'
 import coverImage from '@/images/book-cover.png'
 
+import { useTranslation } from 'next-i18next'
+import { LanguageSwitcher } from './LanguageSwitcher'
+
 function Testimonial() {
+  const { t } = useTranslation()
   return (
     <figure className="relative mx-auto max-w-md text-center lg:mx-0 lg:text-left">
       <div className="flex justify-center text-blue-600 lg:justify-start">
@@ -13,23 +19,24 @@ function Testimonial() {
       </div>
       <blockquote className="mt-2">
         <p className="font-display text-xl font-medium text-slate-900">
-          “This ebook helps me plan my trip to China. I wish I had known this
-          earlier.”
+          {t("This ebook helps me plan my trip to China. I wish I had known this earlier.")}
         </p>
       </blockquote>
       <figcaption className="mt-2 text-sm text-slate-500">
         <strong className="font-semibold text-blue-600 before:content-['—_']">
           Staffan Solomon
         </strong>
-        , traveler from US
+        , {t("traveler from USA")}
       </figcaption>
     </figure>
   )
 }
 
 export function Hero() {
+  const { t } = useTranslation()
   return (
     <header className="overflow-hidden bg-slate-100 lg:bg-transparent lg:px-5">
+      <LanguageSwitcher />
       <div className="mx-auto grid max-w-6xl grid-cols-1 grid-rows-[auto_1fr] gap-y-16 pt-16 md:pt-20 lg:grid-cols-12 lg:gap-y-20 lg:px-3 lg:pb-36 lg:pt-20 xl:py-32">
         <div className="relative flex items-end lg:col-span-5 lg:row-span-2">
           <div className="absolute -bottom-12 -top-20 left-0 right-1/2 z-10 rounded-br-6xl bg-blue-600 text-white/10 md:bottom-8 lg:-inset-y-32 lg:left-[-100vw] lg:right-full lg:-mr-40">
@@ -50,17 +57,17 @@ export function Hero() {
         <div className="bg-white pt-16 lg:col-span-7 lg:bg-transparent lg:pl-16 lg:pt-0 xl:pl-20">
           <div className="mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4 lg:px-0">
             <h1 className="font-display text-5xl font-extrabold text-slate-900 sm:text-6xl">
-              Complete Travel Guide for First-Time Visitors to China.
+              {t("hero")}
             </h1>
             <h2 className="mt-4 text-3xl text-slate-600">
-              An e-book that covers everything you need to plan a trip to China: visas, documents, health and medications, transportation, VPNs, hotels, and restaurants.
+              {t("description")}
             </h2>
             <div className="mt-8 flex gap-4">
               <Button href="#free-chapters" color="blue">
-                Get sample chapter
+                {t("sample button")}
               </Button>
               <Button href="#pricing" variant="outline" color="blue">
-                Buy ebook
+                {t("buy ebook")}
               </Button>
             </div>
           </div>

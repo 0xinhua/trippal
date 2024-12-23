@@ -4,8 +4,12 @@ import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { Pattern } from '@/components/Pattern'
 import { surveyUrl } from './Pricing';
+import { useTranslation } from 'react-i18next';
+import { t } from 'i18next';
 
 export function FreeChapters() {
+  const { t } = useTranslation();
+
   return (
     <section
       id="free-chapters"
@@ -20,18 +24,17 @@ export function FreeChapters() {
           <Pattern className="absolute -top-32 left-0 w-full sm:-top-5 sm:left-3/4 sm:ml-8 sm:w-auto md:left-2/3 lg:left-auto lg:right-2 lg:ml-0 xl:left-2/3 xl:right-auto" />
           <div>
             <h2 className="font-display text-5xl font-extrabold tracking-tight text-white sm:w-3/4 sm:text-6xl md:w-2/3 lg:w-auto">
-              Get the free sample chapters
+              {t("Get free chapters")}
             </h2>
             <p className="mt-4 text-lg tracking-tight text-blue-200">
-              Enter your email address and I’ll send you a sample from the book
-              containing two of my favorite chapters.
+              {t("Enter your email address and I’ll send you a sample from the book containing two of my favorite chapters.")}
             </p>
           </div>
           <form className="lg:pl-16" onSubmit={(e) => {
              e.preventDefault(); window.location.href = surveyUrl
           }}>
             <h3 className="text-base font-medium tracking-tight text-white">
-              Get two free chapters straight to your inbox{' '}
+              {t("Get two free chapters straight to your inbox")}{' '}
               <span aria-hidden="true">&rarr;</span>
             </h3>
             <div className="mt-4 sm:relative sm:flex sm:items-center sm:py-0.5 sm:pr-2.5">
@@ -51,7 +54,7 @@ export function FreeChapters() {
                 color="white"
                 className="mt-4 w-full sm:relative sm:z-10 sm:mt-0 sm:w-auto sm:flex-none"
               >
-                Get free chapters
+                {t('Get free chapters')}
               </Button>
             </div>
           </form>

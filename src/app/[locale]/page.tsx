@@ -12,12 +12,12 @@ import { Testimonial } from '@/components/Testimonial'
 import { Testimonials } from '@/components/Testimonials'
 import avatarImage1 from '@/images/avatars/avatar-1.png'
 import avatarImage2 from '@/images/avatars/avatar-2.png'
-import TranslationsProvider from './TranslationsProvider'
-import initTranslations from './i18n'
+import TranslationsProvider from './../TranslationsProvider'
+import initTranslations from '../i18n'
 
 const i18nNamespaces = ['landing']
 
-export default async function Home({ params: { locale = 'en' } } : { params: { locale: string } }) {
+export default async function Home({ params: { locale } } : { params: { locale: string } }) {
 
   const { t, resources } = await initTranslations(locale, i18nNamespaces);
 

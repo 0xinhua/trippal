@@ -1,3 +1,5 @@
+"use client"
+
 import { Container } from '@/components/Container'
 import {
   Expandable,
@@ -5,6 +7,7 @@ import {
   ExpandableItems,
 } from '@/components/Expandable'
 import { SectionHeading } from '@/components/SectionHeading'
+import { useTranslation } from 'next-i18next'
 
 const tableOfContents = {
   'Getting Started': {
@@ -31,6 +34,7 @@ const tableOfContents = {
 }
 
 export function TableOfContents() {
+  const { t } = useTranslation()
   return (
     <section
       id="table-of-contents"
@@ -39,14 +43,13 @@ export function TableOfContents() {
     >
       <Container>
         <SectionHeading number="1" id="table-of-contents-title">
-          Table of contents
+        {t("Table of contents")}
         </SectionHeading>
         <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
-          Get a look at all of the content covered in the book. Everything you
-          need to know is inside.
+        {t("table of contents title")}
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
-        “Travel to China Like a Local” is a comprehensive guide designed to provide all the essential information you need for an enjoyable trip to China. It covers everything from transit policies and visa requirements to transportation options and must-visit attractions.
+        {t("table of contents description")}
         </p>
         <Expandable>
           <ol role="list" className="mt-16 space-y-10 sm:space-y-16">
@@ -54,7 +57,7 @@ export function TableOfContents() {
               {Object.entries(tableOfContents).map(([title, pages]) => (
                 <li key={title}>
                   <h3 className="font-display text-3xl font-bold tracking-tight text-slate-900">
-                    {title}
+                    {t(title)}
                   </h3>
                   <ol
                     role="list"
@@ -70,7 +73,7 @@ export function TableOfContents() {
                           className="font-medium text-slate-900"
                           aria-hidden="true"
                         >
-                          {title}
+                          {t(title)}
                         </span>
                         <span
                           className="font-mono text-slate-400"
@@ -85,7 +88,7 @@ export function TableOfContents() {
               ))}
             </ExpandableItems>
           </ol>
-          <ExpandableButton>See more</ExpandableButton>
+          <ExpandableButton>{t('See more')}</ExpandableButton>
         </Expandable>
       </Container>
     </section>

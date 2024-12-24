@@ -11,6 +11,8 @@ const inter = Inter({
   variable: '--font-inter',
 })
 
+const ogImageUrl = "https://trippal.co/og.png"
+
 export const metadata: Metadata = {
   title: 'Complete Travel Guide for First-Time Visitors to China.',
   description:
@@ -22,6 +24,23 @@ export const metadata: Metadata = {
     'Travel Guide to China pdf',
     'Tips for Traveling to China for business',
   ],
+  openGraph: {
+    title: 'Complete Travel Guide for First-Time Visitors to China.',
+    description: 'A China Travel Guide book that guides you how to plan your first trip to China.',
+    url: 'https://trippal.co',
+    images: [
+      {
+        url: ogImageUrl,
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Complete Travel Guide for First-Time Visitors to China.',
+    description: 'A China Travel Guide book that guides you how to plan your first trip to China.',
+    images: [ogImageUrl],
+  },
 }
 
 export default function RootLayout({

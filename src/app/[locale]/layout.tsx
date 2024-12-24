@@ -47,8 +47,8 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700&display=swap"
         />
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-QSSCV1DY8R"></Script>
-        <Script>
+        <Script id="googletagmanager" async src="https://www.googletagmanager.com/gtag/js?id=G-QSSCV1DY8R"></Script>
+        <Script id="google-analytics">
           {`window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());

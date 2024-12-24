@@ -1,7 +1,7 @@
 import { type Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import clsx from 'clsx'
-import { GoogleAnalytics } from '@next/third-parties/google'
+import Script from 'next/script'
 
 import '@/styles/tailwind.css'
 
@@ -47,9 +47,17 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700&display=swap"
         />
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-QSSCV1DY8R"></Script>
+        <Script>
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-QSSCV1DY8R');
+          `}
+        </Script>
       </head>
       <body className="flex min-h-full flex-col">{children}</body>
-      <GoogleAnalytics gaId="G-QSSCV1DY8R" />
     </html>
   )
 }

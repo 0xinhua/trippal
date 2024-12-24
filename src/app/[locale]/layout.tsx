@@ -14,7 +14,7 @@ const inter = Inter({
 const ogImageUrl = "https://trippal.co/og.png"
 
 export const metadata: Metadata = {
-  title: 'Complete Travel Guide for First-Time Visitors to China.',
+  title: 'Ultimate Travel Guide for First-Time Visitors to China.',
   description:
     'A China Travel Guide book that guides you how to plan your first trip to China.',
   keywords: [
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     'Tips for Traveling to China for business',
   ],
   openGraph: {
-    title: 'Complete Travel Guide for First-Time Visitors to China.',
+    title: 'Ultimate Travel Guide for First-Time Visitors to China.',
     description: 'A China Travel Guide book that guides you how to plan your first trip to China.',
     url: 'https://trippal.co',
     images: [
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Complete Travel Guide for First-Time Visitors to China.',
+    title: 'Ultimate Travel Guide for First-Time Visitors to China.',
     description: 'A China Travel Guide book that guides you how to plan your first trip to China.',
     images: [ogImageUrl],
   },

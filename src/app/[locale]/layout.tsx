@@ -2,6 +2,7 @@ import { type Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import clsx from 'clsx'
 import Script from 'next/script'
+import mixpanel from 'mixpanel-browser'
 
 import '@/styles/tailwind.css'
 
@@ -48,6 +49,16 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
+  mixpanel.init('5f07d7ef81b7c256f106b1cdee2fd808', {
+    persistence: 'localStorage',    // set persistence to local storage
+    track_pageview: true
+  })
+
+  mixpanel.track_pageview({
+    "page": "Homepage"
+  })
+
   return (
     <html
       lang="en"

@@ -9,6 +9,7 @@ import coverImage from '@/images/book-cover.png'
 
 import { useTranslation } from 'next-i18next'
 import { LanguageSwitcher } from './LanguageSwitcher'
+import mixpanel from 'mixpanel-browser'
 
 function Testimonial() {
   const { t } = useTranslation()
@@ -32,8 +33,21 @@ function Testimonial() {
   )
 }
 
+mixpanel.init('5f07d7ef81b7c256f106b1cdee2fd808', {
+  persistence: 'localStorage',
+  track_pageview: true
+})
+
 export function Hero() {
   const { t } = useTranslation()
+
+  const handleBuyClick = () => {
+    mixpanel.track('Buy Click'); // 记录购买按钮点击事件
+  }
+
+  const handleSampleClick = () => {
+    mixpanel.track('Sample Button Click'); // 记录样本按钮点击事件
+  }
   return (
     <header className="overflow-hidden bg-slate-100 lg:bg-transparent lg:px-5">
       <LanguageSwitcher />
@@ -63,10 +77,10 @@ export function Hero() {
               {t("description")}
             </h2>
             <div className="mt-8 flex gap-4">
-              <Button href="#free-chapters" color="blue">
+              <Button href="#free-chapters" color="blue" onClick={handleSampleClick}>
                 {t("sample button")}
               </Button>
-              <Button href="#pricing" variant="outline" color="blue">
+              <Button href="#pricing" variant="outline" color="blue" onClick={handleBuyClick}>
                 {t("buy ebook")}
               </Button>
             </div>

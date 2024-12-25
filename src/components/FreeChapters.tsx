@@ -3,12 +3,12 @@
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { Pattern } from '@/components/Pattern'
-import { surveyUrl } from './Pricing';
-import { useTranslation } from 'react-i18next';
-import { t } from 'i18next';
+import { surveyUrl } from './Pricing'
+import { useTranslation } from 'react-i18next'
+import mixpanel from 'mixpanel-browser'
 
 export function FreeChapters() {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   return (
     <section
@@ -31,6 +31,7 @@ export function FreeChapters() {
             </p>
           </div>
           <form className="lg:pl-16" onSubmit={(e) => {
+             mixpanel.track('Free Chapter Click')
              e.preventDefault(); window.location.href = surveyUrl
           }}>
             <h3 className="text-base font-medium tracking-tight text-white">

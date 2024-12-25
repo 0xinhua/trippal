@@ -7,6 +7,7 @@ import { Container } from '@/components/Container'
 import { GridPattern } from '@/components/GridPattern'
 import { SectionHeading } from '@/components/SectionHeading'
 import { useTranslation } from 'react-i18next'
+import mixpanel from 'mixpanel-browser'
 
 export const surveyUrl = 'https://forms.gle/dCCjfVF8xL5xfkX79'
 
@@ -95,6 +96,9 @@ function Plan({
           </ul>
         </div>
         <Button
+          onClick={() => {
+            mixpanel.track('Pricing Buy Click')
+          }}
           href={href}
           color={featured ? 'white' : 'slate'}
           className="mt-8"

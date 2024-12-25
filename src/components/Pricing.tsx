@@ -8,7 +8,7 @@ import { GridPattern } from '@/components/GridPattern'
 import { SectionHeading } from '@/components/SectionHeading'
 import { useTranslation } from 'react-i18next'
 
-export const surveyUrl = 'https://rsgx3y2b6di4.sg.larksuite.com/share/base/form/shrlgOqrQ98tKevcDXNonmhxVff'
+export const surveyUrl = 'https://forms.gle/cbgFQuxrLCqVMzUf9'
 
 function Plan({
   name,

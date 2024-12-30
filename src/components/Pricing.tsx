@@ -9,7 +9,7 @@ import { SectionHeading } from '@/components/SectionHeading'
 import { useTranslation } from 'react-i18next'
 import mixpanel from 'mixpanel-browser'
 
-export const surveyUrl = 'https://forms.gle/dCCjfVF8xL5xfkX79'
+export const surveyUrl = 'https://forms.gle/mHynhxhf3ymAe8fn8'
 
 function Plan({
   name,

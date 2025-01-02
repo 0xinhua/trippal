@@ -1,9 +1,14 @@
-/** @type {import('next').NextConfig} */
+const withMDX = require('@next/mdx')({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+  },
+})
 
-const { i18nConfig } = require('./i18nConfig')
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  i18n: i18nConfig,
-  reactStrictMode: true
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
 }
 
-module.exports = nextConfig
+module.exports = withMDX(nextConfig)

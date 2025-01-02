@@ -1,31 +1,30 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://trippal.co'
-  
-  // 基础路由
-  const routes = [
-    '',
-    '/guide/China-visa-free-Policy-144',
-  ].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: route === '' ? 1 : 0.8,
-  }))
-
-  // 多语言路由
-  const locales = ['en', 'ja', 'ko']
-  const localizedRoutes = locales.flatMap((locale) =>
-    [
-      '',
-    ].map((route) => ({
-      url: `${baseUrl}/${locale}${route}`,
+  return [
+    {
+      url: 'https://trippal.co/',
       lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: route === '' ? 1 : 0.8,
-    }))
-  )
-
-  return [...routes, ...localizedRoutes]
-} 
+      changeFrequency: 'weekly',
+      priority: 1,
+    },
+    {
+      url: 'https://trippal.co/ja',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 1,
+    },
+    {
+      url: 'https://trippal.co/ko',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 1,
+    },
+    {
+      url: 'https://trippal.co/guide/China-visa-free-Policy-144',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+  ]
+}

@@ -67,6 +67,16 @@ export default function RootLayout({
         inter.variable,
       )}
     >
+      <Script id="ahrefs-analytics" src="https://analytics.ahrefs.com/analytics.js" data-key="tgAseXOCr25EjtPoO0MNSw" async></Script>
+      <Script id="googletagmanager" async src="https://www.googletagmanager.com/gtag/js?id=G-QSSCV1DY8R"></Script>
+      <Script id="google-analytics">
+        {`window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-QSSCV1DY8R');
+        `}
+      </Script>
       <head>
         <link
           rel="preconnect"
@@ -77,16 +87,6 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700&display=swap"
         />
-        <Script id="ahrefs-analytics" src="https://analytics.ahrefs.com/analytics.js" data-key="tgAseXOCr25EjtPoO0MNSw" async></Script>
-        <Script id="googletagmanager" async src="https://www.googletagmanager.com/gtag/js?id=G-QSSCV1DY8R"></Script>
-        <Script id="google-analytics">
-          {`window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-QSSCV1DY8R');
-          `}
-        </Script>
       </head>
       <body className="flex min-h-full flex-col">{children}</body>
     </html>

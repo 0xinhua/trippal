@@ -39,7 +39,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <strong className="font-medium" {...props} />
     ),
     a: ({ href, children, ...props }: AnchorProps) => {
-      const className = 'text-blue-500 hover:text-blue-700';
+      const className = 'text-blue-500 underline decoration-2 hover:text-blue-700';
       if (href?.startsWith('/')) {
         return (
           <Link href={href} className={className} {...props}>
@@ -58,7 +58,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         <a
           href={href}
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener noreferrer 11"
+          style={{ textDecoration: 'underline', textDecorationThickness: '1' }}
           className={className}
           {...props}
         >
